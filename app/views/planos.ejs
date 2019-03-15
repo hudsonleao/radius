@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="theme-color" content="#343a40">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#343a40">
+        <title>PLANOS</title>
+        <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../../assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="../../assets/css/sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../assets/css/uikit.min.css" />
+    
+        <script type="text/javascript">
+
+            window.onload=function(){
+            
+            var filtro = document.getElementById('filtro-nome');
+            var tabela = document.getElementById('lista');
+            filtro.onkeyup = function() {
+            var nomeFiltro = filtro.value;
+            for (var i = 1; i < tabela.rows.length; i++) {
+            var conteudoCelula = tabela.rows[i].cells[1].innerText;
+            var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+            tabela.rows[i].style.display = corresponde ? '' : 'none';
+    }
+};
+            
+            }
+            
+            </script>
+    </head>
+
+    <body>
+
+            <%- include('header') -%>
+       
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/home">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active">Planos</li>
+                </ol>
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Planos Cadastrados</h1>
+                        <p><a class="btn btn-success" href="/admin/planos/incluir">
+                            <span class="fa fa-user-plus"></span> Adicionar
+                        </a>
+                        </p>
+                        <div class="input-group">
+                                <input class="form-control" id="filtro-nome" placeholder="Pesquisar planos...">
+                            </div><br>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0" id="lista">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Upload/Download</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody> 
+                                            <% for(var i=0;i < resultado.length;i++){ %>
+                                            <tr>
+                                                <td>
+                                                    <%=resultado[i].id%>
+                                                </td>
+                                                <td>
+                                                    <%=resultado[i].groupname%>
+                                                </td>
+                                                <td>
+                                                        <%=resultado[i].value%>
+                                                </td>
+                                                <td><p>
+                                                        <a class="btn btn-info" href="/admin/planos/editar?id=<%=resultado[i].id%>">
+                                                            <span class="fa fa-edit"></span> Editar
+                                                        </a>
+                                                        <a href="/admin/planos/excluir?id=<%=resultado[i].id%>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir este plano?')">
+                                                            <span class="fa fa-trash"></span> Excluir
+                                                        </a>
+                                                    </p></td>
+                                            </tr>
+                                        <%}%>
+                        
+                                    </tbody>            
+                            </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Deseja realmente excluir?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Clique em "Excluir" para deletar o usuário.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-danger"><span class="fa fa-trash"></span>Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <%- include('footer') -%>
+                
+                            <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+                            <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                
+                            <script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+                
+                            <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
+                            <script src="../../assets/vendor/datatables/jquery.dataTables.js"></script>
+                            <script src="../../assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+                
+                            <script src="../../assets/js/sb-admin.min.js"></script>
+                
+                            <script src="../../assets/js/sb-admin-datatables.min.js"></script>
+                            <script src="../../assets/js/sb-admin-charts.min.js"></script>
+                            <script src="../../assets/js/uikit.min.js"></script>
+                            <script src="../../assets/js/uikit-icons.min.js"></script>
+                        </div>
+                    </body>
+                
+                </html>

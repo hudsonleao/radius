@@ -1,0 +1,23 @@
+{
+  "name": "radius",
+  "version": "1.0.0",
+  "description": "Servidor radius",
+  "main": "app.js",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "crypto": "^1.0.1",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.1.0",
+    "md5": "^2.2.1",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hudson",
+  "license": "ISC"
+}

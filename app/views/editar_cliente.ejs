@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="theme-color" content="#343a40">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#343a40">
+        <title>INCLUIR CLIENTE</title>
+        <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../../assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="../../assets/css/sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../assets/css/uikit.min.css" />
+    </head>
+
+    <body>
+
+            <%- include('header') -%>
+       
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/home">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active">Incluir cliente</li>
+                </ol>
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Editar cliente</h1>
+                        <% for(var i=0;i < resultado.length;i++){ %>
+                <form action="/admin/clientes/salvar_edicao" method="post" class="uk-grid-small" uk-grid>
+                    <input type="hidden" class="form-control" name="usuario" value="<%=resultado[i].username%>">
+                    <div class="uk-width-1-1">
+                            <label name="nome">Nome:</label>
+                        <input class="uk-input" value="<%=resultado[i].nome%>" name="nome" type="text" placeholder="Digite o nome completo" required>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                            <label>Logradouro:</label>
+                        <input class="uk-input" value="<%=resultado[i].logradouro%>" name="logradouro" type="text" placeholder="Digite o logradouro" required>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                            <label>Bairro:</label>
+                        <input class="uk-input" value="<%=resultado[i].bairro%>" name="bairro" type="text" placeholder="Digite o bairro" required>
+                    </div>
+                    
+                    <div class="uk-width-1-2@s">
+                        <label>Usuário:</label>
+                        <input class="uk-input" value="<%=resultado[i].username%>" name="username" type="text" placeholder="Digite o usuário" required>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                        <label name="senha">Senha:</label>
+                        <input class="uk-input" name="senha" type="password" placeholder="Digite a senha" required>
+                    </div>
+
+                    <div class="uk-width-1-2@s">
+                        <label name="mac">Endereço MAC:</label>
+                        <input class="uk-input" value="<%=resultado[i].mac%>" name="mac" type="text" placeholder="Digite o MAC" required>
+                    </div>
+                    <% } %>
+                    <div class="uk-width-1-2@s">
+                            
+                        <label>Plano:</label>
+                        <select name="plano" for="plano" class="uk-select">
+                                <% for(var i=0;i < consulta.length;i++){ %>
+                            <option value="<%=consulta[i].value%>"><%=consulta[i].groupname%></option>             
+                            <% } %>
+                            
+                        </select>
+                        
+                    </div>
+                    <p class="uk-width-1-1">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="fa fa-check-square-o"></span> Salvar</button>
+                    </p>
+                </form>
+            </div>
+            <%- include('footer') -%>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">EDIÇÃO DE UM CLENTE CADASTRADO</h4>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      O cliente foi alterado com sucesso!
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </a>
+                    <a class="btn btn-success"href="/admin/planos/">
+                        <span class="fa fa-check-square-o"></span> OK
+                    </a>
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+
+            <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+            <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
+            <script src="../../assets/vendor/datatables/jquery.dataTables.js"></script>
+            <script src="../../assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+            <script src="../../assets/js/sb-admin.min.js"></script>
+
+            <script src="../../assets/js/sb-admin-datatables.min.js"></script>
+            <script src="../../assets/js/sb-admin-charts.min.js"></script>
+            <script src="../../assets/js/uikit.min.js"></script>
+            <script src="../../assets/js/uikit-icons.min.js"></script>
+            <script type="text/javascript" src="../../assets/js/jquery.js"></script> 
+            <script type="text/javascript" src="../../assets/js/jquery-maskedinput.js"></script> 
+            <script type="text/javascript">
+
+                $(function () {
+                    $("#mac").mask("**:**:**:**:**:**");
+                    $("#cep").mask("*****-***");
+
+                });
+            </script>
+        </div>
+    </body>
+
+</html>

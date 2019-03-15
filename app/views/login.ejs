@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#0489B1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#0489B1">
+        <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/custom_login.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/uikit-rtl.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/uikit-rtl.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/uikit.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/uikit.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+        <script src="/assets/js/uikit.min.js"></script>
+        <script src="/assets/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+
+        <div>
+            <form action="/admin/auth" method="post" class="uk-position-center">
+            <div class="card card-container">
+                    <img id="profile-img" class="profile-img-card" src="/assets/img/avatar_2x.png" />
+                    <p id="profile-name" class="profile-name-card"></p>
+                    <% if(validacoes.length > 0){ %>
+                        <div class="uk-alert-danger" uk-alert>
+                            <a class="uk-alert-close" uk-close></a>
+                            <p>Há algum erro, verifique os campos.</p>
+                            <ul>
+                                <% for(var i=0; i < validacoes.length; i++) { %>
+                                <li>
+                                    <%=validacoes[i].msg; %>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div> 
+                    <% } %>
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input class="uk-input" name="login" type="text">
+                    </div>
+                </div>
+            
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                        <input class="uk-input" name="senha" type="password">
+                    </div>
+                </div>
+            
+            <button class="uk-button uk-button-primary">Entrar</button>
+        </div>
+        </form>  
+        </div>   
+    </body>
+    <script src="/assets/js/uikit.min.js"></script>
+    <script src="/assets/js/uikit-icons.min.js"></script>
+    <script src="/assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/js/custom_login.js" type="text/javascript"></script>
+</html>

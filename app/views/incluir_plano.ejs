@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#343a40">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#343a40">
+    <title>INCLUIR PLANO</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../../assets/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/uikit.min.css" />
+</head>
+
+<body>
+
+    <%- include('header') -%>
+
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/admin/home">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active">Incluir plano</li>
+                </ol>
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Incluir plano</h1>
+                        <form action="/admin/planos/salvar" data-toggle="validator" role="form" method="post" class="uk-grid-small" uk-grid>
+                            <label for="Plano">Nome do plano:</label>
+                            <div class="uk-width-1-1">
+                                <input class="uk-input" name="nome" type="text" placeholder="Digite o nome do plano" required>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <label for="velocidade">Upload/Download</label>
+                                <input class="uk-input" name="velocidade" type="text" placeholder="Digite a velocidade" required>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <div class="alert alert-info" role="alert">
+                                    <li>
+                                        <strong>Atenção!</strong>
+                                        <br>Não se esqueça de colocar a letra referente a unidade de medida e a barra para delimitar
+                                        o upload e o download. O valor de Upload vem sempre antes do Download.
+                                        <br>
+                                        <strong>Exemplo:</strong>
+                                        <br> 1000k/2000k corresponde a 1 Megabit de Upload e 2 Megabits de download.
+                                        <br> Podendo também ser informado desta forma: 1M/2M.</li>
+                                </div>
+                            </div>
+                            <p class="uk-width-1-1">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                    <span class="fa fa-check-square-o"></span> Salvar</button>
+                            </p>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('footer') -%>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">INCLUSÃO DE UM PLANO CLIENTE</h4>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            O plano foi cadastrado com sucesso!
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            </a>
+                            <a class="btn btn-success" href="/admin/planos">
+                                <span class="fa fa-check-square-o"></span> OK
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+            <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <script src="../../assets/vendor/chart.js/Chart.min.js"></script>
+            <script src="../../assets/vendor/datatables/jquery.dataTables.js"></script>
+            <script src="../../assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+            <script src="../../assets/js/sb-admin.min.js"></script>
+
+            <script src="../../assets/js/sb-admin-datatables.min.js"></script>
+            <script src="../../assets/js/sb-admin-charts.min.js"></script>
+            <script src="../../assets/js/uikit.min.js"></script>
+            <script src="../../assets/js/uikit-icons.min.js"></script>
+            </div>
+</body>
+
+</html>

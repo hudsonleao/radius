@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="theme-color" content="#343a40">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#343a40">
+        <title>INICIO</title>
+        <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="../assets/css/sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/uikit.min.css" />
+    </head>
+    <body>
+            <%- include('header') -%>
+        <div class="content-wrapper">
+    <div class="container-fluid">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/admin/home">Inicio</a>
+        </li>
+      </ol>
+       <!-- Icon Cards-->
+       <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-group"></i>
+              </div>
+              <div class="mr-5"><%=clientes[0].total%> CLIENTES</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="/admin/clientes">
+              <span class="float-left">Mais detalhes</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-user"></i>
+              </div>
+              <div class="mr-5"><%=usuarios[0].total%> USUÁRIOS</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="/admin/usuarios">
+              <span class="float-left">Mais detalhes</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-success o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-download"></i>
+              </div>
+              <div class="mr-5"><%=planos[0].total%> PLANOS</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="/admin/planos">
+              <span class="float-left">Mais detalhes</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-id-card"></i>
+              </div>
+              <div class="mr-5"><%=cargos[0].total%> CARGOS</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#">
+              <span class="float-left">Mais detalhes</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    <%- include('footer') -%>
+            <script src="../assets/vendor/jquery/jquery.min.js"></script>
+            <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="../assets/vendor/chart.js/Chart.min.js"></script>
+            <script src="../assets/vendor/datatables/jquery.dataTables.js"></script>
+            <script src="../assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+            <script src="../assets/js/sb-admin.min.js"></script>
+            <script src="../assets/js/sb-admin-datatables.min.js"></script>
+            <script src="../assets/js/sb-admin-charts.min.js"></script>
+        </div>
+    </body>
+
+</html>
