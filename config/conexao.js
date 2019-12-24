@@ -4,7 +4,7 @@ var conectar = function(){
     var parametros = {
         host: '192.168.0.47',
         user: 'radius',
-        password: 'h2u9d0s4on',
+        password: 'radius',
         database: 'radius'
     };
 
